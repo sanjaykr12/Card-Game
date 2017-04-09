@@ -28,3 +28,16 @@ class testDeckMethods(unittest.TestCase):
         print "going to shuffle cards"
         deck = Deck()
         deck.shuffle_cards()
+        deck.display_cards(5)
+class testGameMethods(unittest.TestCase):
+    def test_game_init(self):
+        p1 = Player("p1")
+        p2 = Player("p2")
+        pl = [p1,p2]
+        g = Game(pl)
+        self.assertEqual(len(g.players), 2, "players list is 2")
+        self.assertEqual(len(g.deck.cards),52, "deck cards  list is 52")
+
+
+if __name__ == '__main__':
+unittest.main()
